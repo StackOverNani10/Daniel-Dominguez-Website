@@ -61,6 +61,11 @@ p {
   margin: 0;
 }
 
+.description-projects {
+  width: auto;
+  height: 157px;
+}
+
 .button-up {
   width: 60px;
   height: 60px;
