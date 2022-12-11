@@ -10,100 +10,162 @@
 		content="web design, web, development, web development, website, software, daniel, daniel dominguez, dominguez, danieldominguez, freelance, engineer, freelancing, software developer">
 	<meta name="description" content="Daniel Dominguez - personal Website">
 	<meta name="author" content="Daniel Dominguez">
-	<title>Daniel Dominguez Website</title>
-	<link rel="stylesheet" href="style.css">
+
+	<!--==========================  FAVICON  ==========================
+    <link rel="shortcut icon" href="" type="image/x-icon">-->
+
+	<!--=========================  REMIXICON  =========================-->
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+	<!--============================  CSS  ============================-->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!--========================  FONTAWESOME  ========================-->
 	<script src="https://kit.fontawesome.com/fecd8e5a27.js" crossorigin="anonymous"></script>
+
+	<title>Daniel Dominguez Website</title>
+
 </head>
 
 <body>
-	<!-- ID Particles.js -->
+	<!--=======================  ID Particles.js  =====================-->
 	<div id="particles-js">
-		<canvas class="particles-js-canvas-el" width="1265" height="883" style="width: 100%; height: 100%;"></canvas>
+		<canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas>
 	</div>
-	<div class="bigContainer">
-		<header class="header">
-			<nav class="menubar">
-				<div class="brand">
-					<a href="Index.html">
-						<h2>D<span>D</span></h2>
-					</a>
-				</div>
-				<ul class="menu-list-link">
-					<li><a href="#home">Home</a></li>
-					<li><a href="#about">About me</a></li>
-					<li><a href="#portfolio">Projects</a></li>
-					<li><a href="#contact">Contact</a></li>
+
+	<!--============================  HEAD  ===========================-->
+	<header class="header" id="header">
+		<nav class="nav container">
+			<a href="#" class="nav__logo">
+				DD
+			</a>
+
+			<div class="nav__menu" id="nav-menu">
+				<ul class="nav__list">
+					<li class="nav__item">
+						<a href="#home" class="nav__link active-link">Home</a>
+					</li>
+					<li class="nav__item">
+						<a href="#about" class="nav__link">About me</a>
+					</li>
+					<li class="nav__item">
+						<a href="#portfolio" class="nav__link">Projects</a>
+					</li>
+					<li class="nav__item">
+						<a href="#contact" class="nav__link">Contact</a>
+					</li>
 				</ul>
-			</nav>
-		</header>
-		<main class="main" id="home">
-			<img src="source/mee.jpg" alt="daniel domínguez picture">
-			<div class="info-Container">
-				<h1>
-					Hi! My name is <br> <strong>Daniel Domínguez</strong> <br> a Software Developer
-				</h1>
-				<p>
-					I am a person full of curiosity, willing to take all the
-					challenges that are presented to me and to learn new things
-					every day to help me be a better person and professional.
-					I study Software Engineer at the Instituto Tecnológico
-					de Santo Domingo (INTEC) and my short-term goal is to start
-					my own software company.
-				</p>
-				<a download href="source/Currículum Vitae Daniel 2022 English.pdf" target="_blank">
-					<button class="cvdownload-button" download="source/Currículum Vitae Daniel 2022 English.pdf">
-						<i class="fa-solid fa-download"></i>
+
+				<!-- Close button -->
+				<div class="nav__close" id="nav-close">
+					<i class="ri-close-line"></i>
+				</div>
+			</div>
+
+			<div class="nav__buttons">
+				<!-- Toggle button -->
+				<div class="nav__toggle" id="nav-toggle">
+					<i class="ri-apps-2-line"></i>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!--============================  MAIN  ===========================-->
+	<main class="main">
+		<!--==========================  HOME  =========================-->
+		<section class="home section" id="home">
+			<div class="home__container container grid">
+				<img src="source/mee.jpg" alt="daniel domínguez picture" class="home__img">
+
+				<div class="home__data">
+					<h1 class="home__title">
+						Hi! My name is <br> <strong>Daniel Domínguez</strong> <br> a Software Developer
+					</h1>
+
+					<p class="home__description">
+						<span class="section__subtitle special">&#60;p&#62;</span>
+						Enjoy a good dinner with the best dishes in the
+						restaurant and improve your day.
+						<span class="section__subtitle special">&#60;/p&#62;</span>
+					</p>
+
+					<button href="#" class="button" download="source/Currículum Vitae Daniel 2022 English.pdf">
 						Download CV
+						<i class="fa-solid fa-download"></i>
 					</button>
-				</a>
-			</div>
-		</main>
-		<section class="about" id="about">
-			<div class="aboutLeft">
-				<h2>Competencies</h2>
-				<div class="divider"></div>
-				<p>
-					Teamwork<br>
-					Dedication<br>
-					Logic<br>
-					Problem Solver<br>
-					Fast learning<br>
-					Organization<br>
-				</p>
-			</div>
-			<div class="aboutRight">
-				<h2>Skills</h2>
-				<div class="divider"></div>
-				<p>
-					Lenguanje C#, Java, Python<br>
-					Sql Server<br>
-					.net<br>
-					Power Bi<br>
-					Html<br>
-					CSS<br>
-				</p>
+				</div>
 			</div>
 		</section>
-		<section class="portfolio" id="portfolio">
-			<div class="portfolio-headings">
-				<h2>My Portfolio</h2>
-				<div class="divider"></div>
+
+		<!--==========================  ABOUT  ========================-->
+		<section class="about section" id="about">
+			<div class="about__container container grid">
+				<div class="about__data">
+					<span class="section__subtitle">About Me</span>
+
+					<p class="about__description">
+						I am a person full of curiosity, willing to take all the
+						challenges that are presented to me and to learn new things
+						every day to help me be a better person and professional.
+						I study Software Engineer at the Instituto Tecnológico
+						de Santo Domingo (INTEC) and my short-term goal is to start
+						my own software company.
+					</p>
+				</div>
+
+				<img src="source/meBridge.jpg" alt="about image" class="about__img">
 			</div>
-			<div class="portfolio-container">
-				<div class="card">
-					<div class="card-img">
-						<img src="source/ASCII-Converter.jpg" alt="ASCII-Converter img">
-					</div>
-					<div class="card-title">
-						<h2>Project Description</h2>
-						<div class="description-projects">
-							<p>
-								This is a web site to converter
-								characters to ASCII code and vice versa.
-							</p>
-						</div>
-					</div>
-					<div class="card-project-links">
+		</section>
+
+		<!--=======================  ABOUT SKILLS  ====================-->
+		<section class="about section" id="about">
+			<div class="about__container container grid">
+				<div class="about__data left">
+					<h2 class="section__title about__title">
+						Competencies
+					</h2>
+					<p>
+						Teamwork<br>
+						Dedication<br>
+						Logic<br>
+						Problem Solver<br>
+						Fast learning<br>
+						Organization<br>
+					</p>
+				</div>
+
+				<div class="about__data Right">
+					<h2 class="section__title about__title">
+						Skills
+					</h2>
+					<p>
+						Lenguanje C#, Java, Python<br>
+						Sql Server<br>
+						.net<br>
+						Node Js<br>
+						Html<br>
+						CSS<br>
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!--========================  PORTFOLIO  ======================-->
+		<section class="portfolio section" id="portfolio">
+			<h2 class="section__title">My Portfolio</h2>
+
+			<div class="portfolio__container container grid">
+				<article class="portfolio__card">
+					<img src="source/ASCII-Converter.jpg" alt="ASCII-Converter img" class="portfolio__img">
+
+					<h3 class="portfolio__name">Project Description</h3>
+					<span class="portfolio__description">
+						This is a web site to converter
+						characters to ASCII code and vice versa.
+					</span>
+
+					<div class="card__project__links">
 						<a href="https://github.com/StackOverNani10/ASCII-Converter" target="_blank">
 							<i class="fa-brands fa-github"></i>
 						</a>
@@ -115,27 +177,16 @@
 							<i class="fa-solid fa-code"></i>
 						</a>
 					</div>
-					<div class="button-content">
-						<button class="project-details-button">
-							<a href="https://github.com/StackOverNani10/ASCII-Converter/blob/master/README.md">
-								Project details
-							</a>
-						</button>
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-img">
-						<img src="source/Api-ecommerce-img.png" alt="Api-ecommerce img">
-					</div>
-					<div class="card-title">
-						<h2>Project Description</h2>
-						<div class="description-projects">
-							<p>
-								This is the api for an ecommerce.
-							</p>
-						</div>
-					</div>
-					<div class="card-project-links">
+				</article>
+				<article class="portfolio__card">
+					<img src="source/Api-ecommerce-img.png" alt="Api-ecommerce img" class="portfolio__img">
+
+					<h3 class="portfolio__name">Project Description</h3>
+					<span class="portfolio__description">
+						This is the api for an ecommerce.
+					</span>
+
+					<div class="card__project__links">
 						<a href="https://github.com/StackOverNani10/Api-ecommerce" target="_blank">
 							<i class="fa-brands fa-github"></i>
 						</a>
@@ -147,99 +198,99 @@
 							<i class="fa-solid fa-code"></i>
 						</a>
 					</div>
-					<div class="button-content">
-						<button class="project-details-button">
-							<a href="https://github.com/StackOverNani10/Api-ecommerce/blob/master/README.md">
-								Project details
-							</a>
-						</button>
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-img">
-					</div>
-					<div class="card-title">
-						<h2>Project Description</h2>
-						<div class="description-projects">
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Animi veniam odit suscipit accusamus illo autem, consequuntur
-								architecto harum soluta! Fugit repellendus, iusto earum in
-								maiores incidunt dicta praesentium expedita. Odit!
-							</p>
-						</div>
-					</div>
-					<div class="card-project-links">
-						<a href="" target="_blank">
+				</article>
+				<article class="portfolio__card">
+					<img src="source/imgProjectExample.png" alt="ProjectExample img" class="portfolio__img">
+
+					<h3 class="portfolio__name">Project Description</h3>
+					<span class="portfolio__description">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Animi veniam odit suscipit accusamus illo autem. Odit!
+					</span>
+
+					<div class="card__project__links">
+						<a href="#" target="_blank">
 							<i class="fa-brands fa-github"></i>
 						</a>
-						<a href="" target="_blank">
+						<a href="#" target="_blank">
 							<i class="fa-solid fa-earth-americas"></i>
 						</a>
-						<a href="" target="_blank">
+						<a href="#" target="_blank">
 							<i class="fa-solid fa-code"></i>
 						</a>
 					</div>
-					<div class="button-content">
-						<button class="project-details-button">
-							<a href="">
-								Project details
-							</a>
-						</button>
+				</article>
+			</div>
+		</section>
+
+		<!--==========================  CONTACT =======================-->
+		<section class="contact section" id="contact">
+			<div class="contact__container container">
+				<div class="contact__content grid">
+					<iframe class="contact__img__map"
+						src="https://www.google.com/maps/d/embed?mid=1lmdW5Dwa6pgZ4zu8JL5fCOoSnyGmm9k&hl=es&ehbc=2E312F"></iframe>
+
+					<div class="contact__data">
+						<h2 class="section__title">
+							Keep in touch
+						</h2>
+
+						<span class="section__subtitle">Send me a message...</span>
+
+						<form class="contact__form" name="contact" netlify>
+							<input class="contact__input" type="text" name="name" placeholder="Name" required>
+							<input class="contact__input" type="email" name="email" placeholder="Email" required>
+							<textarea class="contact__input" id="note" name="note" placeholder="Place your message!"
+								rows="4" cols="50" required></textarea>
+
+							<button class="button contact__button">
+								Send
+								<i class="ri-send-plane-line"></i>
+							</button>
+						</form>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section class="contact" id="contact">
-			<div class="contact-headings">
-				<h2>Keep in touch</h2>
-				<div class="divider"></div>
-			</div>
-			<div class="contact-container">
-				<div class="map">
-					<iframe
-						src="https://www.google.com/maps/d/embed?mid=1lmdW5Dwa6pgZ4zu8JL5fCOoSnyGmm9k&hl=es&ehbc=2E312F"
-						width="700" height="520"></iframe>
+	</main>
+
+	<!--=============================  FOOTER =========================-->
+	<footer class="footer">
+		<div class="footer__container container grid">
+			<div class="footer__content">
+				<h2 class="footer__title">Daniel Domínguez</h2>
+				<h3 class="footer__information">Software Developer</h3>
+
+				<div class="footer__social">
+					<a href="https://www.instagram.com/daniel_dominguez10/" target="_blank" class="footer__social-link">
+						<i class="fa-brands fa-instagram"></i>
+					</a>
+					<a href="https://www.linkedin.com/in/daniel-domínguez-pimentel-818306198/" target="_blank"
+						class="footer__social-link">
+						<i class="fa-brands fa-linkedin-in"></i>
+					</a>
+					<a href="https://twitter.com/Danidancer10" target="_blank" class="footer__social-link">
+						<i class="fa-brands fa-twitter"></i>
+					</a>
 				</div>
-				<div class="contact-form">
-					<h4>Send me a message...</h4>
-					<form class="form" name="contact" netlify>
-						<input class="input_field_name" type="text" name="name" placeholder="Name" required>
-						<input class="input_field_email" type="email" name="email" placeholder="Email" required>
-						<textarea id="note" name="note" placeholder="Place your message!" rows="4" cols="50"
-							required></textarea>
-						<input type="submit" class="btn-submit" value="Send">
-					</form>
-				</div>
 			</div>
-		</section>
-		<!--Button Go Up-->
-		<div class="button-up" id="button-up">
-			<i class="fa-solid fa-angle-up"></i>
 		</div>
-		<footer class="footer">
-			<div class="footer-Content">
-				<h2>Daniel Domínguez</h2>
-				<h5>Software Developer</h5>
-			</div>
-			<div class="social-network">
-				<a href="https://www.instagram.com/daniel_dominguez10/" target="_blank">
-					<i class="fa-brands fa-instagram"></i>
-				</a>
-				<a href="https://www.linkedin.com/in/daniel-domínguez-pimentel-818306198/" target="_blank">
-					<i class="fa-brands fa-linkedin-in"></i>
-				</a>
-				<a href="https://twitter.com/Danidancer10" target="_blank">
-					<i class="fa-brands fa-twitter"></i>
-				</a>
-			</div>
-		</footer>
-	</div>
-	<!-- JS Particles.js -->
-	<script src="particle-background/particles.js"></script>
-	<script src="particle-background/app.js"></script>
-	<!-- This is the JS -->
-	<script src="script.js"></script>
+	</footer>
+
+	<!--==========================  SCROLL UP  ========================-->
+	<a href="#" class="scrollup" id="scroll-up">
+		<i class="fa-solid fa-angle-up"></i>
+	</a>
+
+	<!--=======================  JS Particles.js  =====================-->
+	<script src="assets/particle-background/particles.js"></script>
+	<script src="assets/particle-background/app.js"></script>
+
+	<!--=======================  SCROLLREVEAL  ========================-->
+	<script src="assets/js/scrollreveal.min.js"></script>
+
+	<!--==========================  MAIN JS  ==========================-->
+	<script src="assets/js/script.js"></script>
 </body>
 
 </html>
