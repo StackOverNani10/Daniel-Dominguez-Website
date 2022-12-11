@@ -283,6 +283,7 @@ img {
 .home__description {
   padding: 0 1rem;
   margin-bottom: 2rem;
+  text-align: initial;
 }
 
 /*==================== BUTTON ===================*/
@@ -313,19 +314,23 @@ img {
 }
 
 /*==================== ABOUT ====================*/
-.about {
+.about,
+.skills {
   position: relative;
 }
 
-.about__container {
+.about__container,
+.skills__container {
   row-gap: 3rem;
 }
 
-.about__data {
+.about__data,
+.skills__data {
   text-align: center;
 }
 
-.about__title {
+.about__title,
+.skills__title {
   display: flex;
   justify-content: center;
   align-items: center;
