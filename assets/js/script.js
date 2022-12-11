@@ -98,6 +98,6 @@ const sr = ScrollReveal({
 sr.reveal(`.home__img, .portfolio__container,
             .footer__content, footer__information`)
 sr.reveal(`.home__data`, { origin: 'bottom' })
-sr.reveal(`.about__data, .skills__data`, { origin: 'left' })
+sr.reveal(`.about__data, .skills__content`, { origin: 'left' })
 sr.reveal(`.about__img`, { origin: 'right' })
 sr.reveal(`.portfolio__card`, { interval: 100 })
