@@ -8,12 +8,12 @@
   /*=========== COLORS ============*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --main-color: hsl(0, 100%, 98%);
-  --secundary-color: hsl(0, 75%, 77%);
+  --secundary-color: hsl(0, 70%, 78%);
   --title-color: hsl(0, 0%, 22%);
   --text-color: hsl(0, 0%, 30%);
   --text-color-light: hsl(0, 0%, 40%);
   --body-color: hsla(0, 0%, 0%, .5);
-  --card-color: hsl(0, 100%, 74%);
+  --card-color: hsl(0, 100%, 72%);
   --shadow-color: hsl(0, 75%, 77%, .6);
 
   /* Particle Bg Colors */
