@@ -11,7 +11,7 @@
   --secundary-color: hsl(0, 70%, 78%);
   --title-color: hsl(0, 0%, 22%);
   --text-color: hsl(0, 0%, 30%);
-  --text-color-light: hsl(0, 0%, 40%);
+  --text-color-light: hsl(0, 3%, 40%);
   --body-color: hsla(0, 0%, 0%, .5);
   --card-color: hsl(0, 100%, 72%);
   --shadow-color: hsl(0, 75%, 77%, .6);
@@ -705,9 +705,8 @@ img {
   }
 
   .home__container {
-    position: relative;
     grid-template-columns: 480px 500px;
-    padding-block: 7rem 3rem;
+    padding: 5rem 3rem;
   }
 
   .home__data {
@@ -729,7 +728,7 @@ img {
     grid-template-columns: 450px 360px;
     align-items: center;
     column-gap: 7rem;
-    padding: 4rem 0;
+    padding: 7rem 0;
   }
 
   .about__data {
