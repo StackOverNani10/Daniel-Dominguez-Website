@@ -13,7 +13,7 @@
   --text-color: hsl(0, 0%, 30%);
   --text-color-light: hsl(0, 3%, 40%);
   --body-color: hsla(0, 0%, 0%, .5);
-  --card-color: hsl(0, 100%, 72%);
+  --card-color: hsl(0, 100%, 65%);
   --shadow-color: hsl(0, 75%, 77%, .6);
 
   /* Particle Bg Colors */
@@ -411,7 +411,7 @@ img {
 }
 
 .portfolio__img {
-  width: 220px;
+  max-width: 220px;
   position: absolute;
   inset: 0;
   margin: 20px auto;
