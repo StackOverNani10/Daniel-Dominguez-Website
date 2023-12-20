@@ -7,18 +7,19 @@
 
   /*=========== COLORS ============*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --main-color: hsl(0, 100%, 98%);
-  --secundary-color: hsl(0, 70%, 78%);
+  --main-color: hsl(200, 100%, 98%);
+  --secundary-color: hsl(195, 70%, 55%);
   --title-color: hsl(0, 0%, 22%);
   --text-color: hsl(0, 0%, 30%);
   --text-color-light: hsl(0, 3%, 40%);
   --body-color: hsla(0, 0%, 0%, .5);
-  --card-color: hsl(0, 100%, 65%);
-  --shadow-color: hsl(0, 75%, 77%, .6);
+  --card-color: hsl(270, 100%, 35%);
+  --shadow-color: hsl(270, 100%, 35%, .6);
+  --white-text-color: hsl(0, 0%, 100%);
 
   /* Particle Bg Colors */
-  --particle-color: hsl(0, 75%, 77%);
-  --lineParticle-color: hsl(0, 100%, 98%);
+  --particle-color: hsl(200, 100%, 98%);
+  --lineParticle-color: hsl(195, 70%, 55%);
 
   /*===== FONT AND TYPOGRAPH =====*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -120,6 +121,7 @@ img {
 }
 
 .section__title {
+  color: var(--text-color);
   font-size: var(--h1-font-size);
   font-family: var(--title-font);
   margin-bottom: 1.5rem;
@@ -344,10 +346,15 @@ img {
   align-items: center;
   column-gap: .5rem;
   margin-bottom: .5rem;
+  color: var(--text-color);
 }
 
 .skills__subtitle {
   margin-bottom: 3.5rem;
+}
+
+.card__title {
+  color: var(--white-text-color);
 }
 
 .skills__box {
@@ -378,12 +385,14 @@ img {
 }
 
 .skills__name {
+  color: var(--white-text-color);
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   line-height: 18px;
 }
 
 .skills__level {
+  color: var(--white-text-color);
   font-size: var(--smaller-font-size);
 }
 
@@ -419,6 +428,7 @@ img {
 }
 
 .portfolio__name {
+  color: var(--white-text-color);
   font-size: var(--h3-font-size);
   font-family: var(--title-font);
   margin-bottom: .25rem;
@@ -431,6 +441,10 @@ img {
   margin-top: 1rem;
 }
 
+.portfolio__description {
+  color: var(--white-text-color);
+}
+
 .card__project__links {
   display: flex;
   padding: 6px;
@@ -438,7 +452,7 @@ img {
 }
 
 .card__project__links a {
-  color: var(--text-color);
+  color: var(--white-text-color);
   transition: color .3s, transform .3s;
 }
 
@@ -470,18 +484,22 @@ img {
   margin-bottom: 2rem;
 }
 
+.contact__title,
+.contact__subtitle {
+  color: var(--white-text-color);
+}
+
 .contact__img__map {
   width: 100%;
   height: 300px;
 }
 
 .contact__data .section__title {
-  color: #fff;
   margin-bottom: 2rem;
 }
 
 .contact__form {
-  background-color: #fff;
+  background-color: var(--white-text-color);
   padding: 5px 5px 5px 16px;
   border-radius: 4rem;
   display: contents;
@@ -524,6 +542,7 @@ img {
 }
 
 .footer__information {
+  color: var(--white-text-color);
   font-size: var(--small-font-size);
   margin-bottom: 1.5rem;
   letter-spacing: 3px;
@@ -534,6 +553,7 @@ img {
 }
 
 .footer__title {
+  color: var(--white-text-color);
   font-size: var(--biggest-font-size);
   margin-bottom: 1.5rem;
 }
