@@ -310,7 +310,7 @@ img {
 .button:hover {
   background-color: var(--card-color);
   color: var(--main-color);
-  border-color: var(--shadow-color);
+  border-color: var(--white-text-color);
 }
 
 .button:hover i {
@@ -572,7 +572,7 @@ img {
 }
 
 .footer__social-link:hover {
-  color: var(--first-color-alt);
+  color: var(--white-text-color);
   transform: translateY(-5px);
 }
 
