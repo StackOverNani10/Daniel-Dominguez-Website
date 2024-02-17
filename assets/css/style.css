@@ -410,13 +410,41 @@ img {
 }
 
 .portfolio__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   background-color: var(--card-color);
   padding: 13rem 2rem 1.5rem;
   box-shadow: 0 8px 20px var(--shadow-color);
   border-radius: 1rem;
-  text-align: center;
   transition: background .4s;
+}
+
+.progress_band {
+  position: absolute;
+  top: 26px;
+  left: -29px;
+  width: 126px;
+  height: 0;
+  border-right: 23px solid transparent;
+  border-left: 26px solid transparent;
+  transform: rotate(313deg);
+  z-index: 1;
+}
+
+.progress_band--completed {
+  border-bottom: 24px solid hsla(119, 100%, 35%, 0.8);
+}
+
+.progress_band--inprogress {
+  border-bottom: 24px solid hsla(0, 100%, 35%, 0.8);
+}
+
+.progress_band p {
+  font-size: var(--smaller-font-size);
+  color: var(--white-text-color);
+  font-weight: var(--font-medium);
 }
 
 .portfolio__img {
@@ -431,18 +459,23 @@ img {
   color: var(--white-text-color);
   font-size: var(--h3-font-size);
   font-family: var(--title-font);
-  margin-bottom: .25rem;
+  text-align: center;
 }
 
 .portfolio__description,
 .about__description {
   display: block;
   font-size: var(--small-font-size);
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 .portfolio__description {
   color: var(--white-text-color);
+  text-align: justify;
+}
+
+.portfolio__card-footer {
+    column-gap: 30px;
 }
 
 .card__project__links {
@@ -862,5 +895,3 @@ img {
     margin-inline: auto;
   }
 }
-
-@media screen and (min-width: 1280px) {}
