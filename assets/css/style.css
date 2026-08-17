@@ -7,19 +7,19 @@
 
   /*=========== COLORS ============*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --main-color: hsl(200, 100%, 98%);
-  --secundary-color: hsl(195, 70%, 55%);
-  --title-color: hsl(0, 0%, 22%);
-  --text-color: hsl(0, 0%, 30%);
-  --text-color-light: hsl(0, 3%, 40%);
-  --body-color: hsla(0, 0%, 0%, .5);
-  --card-color: hsl(270, 100%, 35%);
-  --shadow-color: hsl(270, 100%, 35%, .6);
+  --main-color: hsl(220, 25%, 97%);
+  --secundary-color: hsl(230, 75%, 62%);
+  --title-color: hsl(222, 25%, 16%);
+  --text-color: hsl(222, 12%, 38%);
+  --text-color-light: hsl(222, 10%, 46%);
+  --body-color: hsla(222, 47%, 8%, .5);
+  --card-color: hsl(222, 47%, 14%);
+  --shadow-color: hsl(222, 47%, 14%, .35);
   --white-text-color: hsl(0, 0%, 100%);
 
   /* Particle Bg Colors */
-  --particle-color: hsl(200, 100%, 98%);
-  --lineParticle-color: hsl(195, 70%, 55%);
+  --particle-color: hsl(220, 25%, 97%);
+  --lineParticle-color: hsl(230, 75%, 62%);
 
   /*===== FONT AND TYPOGRAPH =====*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -256,9 +256,32 @@ img {
   padding-top: 2rem;
 }
 
-.home__img {
+.home__img-wrapper {
+  position: relative;
   width: 300px;
+  aspect-ratio: 1 / 1;
   justify-self: center;
+}
+
+.home__img-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -0.9rem;
+  background: linear-gradient(135deg, var(--secundary-color), var(--card-color));
+  border-radius: 2rem;
+  opacity: .4;
+  transform: rotate(-5deg);
+  z-index: -1;
+}
+
+.home__img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 1.75rem;
+  box-shadow: 0 25px 45px hsla(222, 47%, 14%, .3);
 }
 
 .home__data {
@@ -292,9 +315,9 @@ img {
   display: inline-flex;
   align-items: center;
   column-gap: .35rem;
-  background-color: hsla(270, 100%, 35%, .1);
+  background-color: hsla(222, 47%, 14%, .1);
   color: var(--card-color);
-  border: 1px solid hsla(270, 100%, 35%, .3);
+  border: 1px solid hsla(222, 47%, 14%, .3);
   padding: .35rem .9rem;
   border-radius: 4rem;
   font-size: var(--smaller-font-size);
@@ -436,7 +459,12 @@ img {
 
 .about__img {
   width: 300px;
+  max-width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
   justify-self: center;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px hsla(222, 47%, 14%, .25);
 }
 
 /*================== EXPERIENCE ==================*/
@@ -739,7 +767,7 @@ img {
 
 .featured__media {
   height: 200px;
-  background-color: hsl(215, 45%, 12%);
+  background-color: var(--card-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -922,9 +950,102 @@ img {
   color: var(--white-text-color);
 }
 
-.contact__img__map {
+.contact__map {
+  position: relative;
   width: 100%;
   height: 300px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: radial-gradient(circle at 28% 24%, hsl(222, 45%, 22%), var(--card-color) 65%);
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, .08);
+}
+
+.contact__map-network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.contact__map-gridDot {
+  fill: hsla(0, 0%, 100%, .16);
+}
+
+.contact__map-links line {
+  stroke: var(--secundary-color);
+  stroke-width: .35;
+  opacity: .55;
+}
+
+.contact__map-nodes circle {
+  fill: var(--secundary-color);
+  opacity: .85;
+}
+
+.contact__map-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+}
+
+.contact__map-dot {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--secundary-color);
+  box-shadow: 0 0 0 5px hsla(230, 75%, 62%, .22);
+}
+
+.contact__map-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--secundary-color);
+  animation: map-pulse 2.4s ease-out infinite;
+}
+
+@keyframes map-pulse {
+  0% {
+    transform: scale(1);
+    opacity: .55;
+  }
+
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__map-pulse {
+    animation: none;
+    display: none;
+  }
+}
+
+.contact__map-label {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.35rem;
+  display: grid;
+  row-gap: .2rem;
+}
+
+.contact__map-label strong {
+  color: var(--white-text-color);
+  font-family: var(--title-font);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.contact__map-label span {
+  color: hsla(0, 0%, 100%, .7);
+  font-family: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+  font-size: .7rem;
+  letter-spacing: .02em;
 }
 
 .contact__data .section__title {
@@ -957,11 +1078,9 @@ img {
 }
 
 .contact__form {
-  background-color: var(--white-text-color);
-  padding: 5px 5px 5px 16px;
-  border-radius: 4rem;
-  display: contents;
-  column-gap: .5rem;
+  display: grid;
+  row-gap: 1rem;
+  text-align: initial;
 }
 
 .contact__input,
@@ -971,18 +1090,43 @@ img {
 }
 
 .contact__input {
-  width: 90%;
-  padding: 8px;
-  margin: 2px;
-  color: var(--text-color);
+  width: 100%;
+  padding: .95rem 1.25rem;
+  border: 1.5px solid transparent;
+  border-radius: 1rem;
+  background-color: var(--white-text-color);
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+  box-shadow: 0 1px 2px hsla(222, 47%, 8%, .06);
+  transition: border-color .25s, box-shadow .25s;
+}
+
+.contact__input::placeholder {
+  color: var(--text-color-light);
+}
+
+.contact__input:hover {
+  border-color: hsla(222, 47%, 14%, .15);
+}
+
+.contact__input:focus {
+  border-color: var(--secundary-color);
+  box-shadow: 0 0 0 4px hsla(230, 75%, 62%, .18);
+}
+
+textarea.contact__input {
+  resize: vertical;
+  min-height: 130px;
+  line-height: 1.5;
 }
 
 .contact__button {
   cursor: pointer;
+  justify-self: start;
+  border: none;
 }
 
 .contact__container,
-.contact__form,
 .contact__input {
   transition: background .4s;
 }
@@ -1078,18 +1222,6 @@ img {
 
   .contact__content {
     padding: 6rem 1rem 2rem;
-  }
-
-  .contact__form {
-    flex-direction: column;
-    background: none;
-    row-gap: 1rem;
-  }
-
-  .contact__input {
-    width: initial;
-    padding: 1rem;
-    border-radius: 4rem;
   }
 
   .contact__button {
@@ -1196,10 +1328,8 @@ img {
     padding-inline: 0 10rem;
   }
 
-  .home__img {
-    width: 600px;
-    position: inherit;
-    bottom: 1rem;
+  .home__img-wrapper {
+    width: 440px;
   }
 
   .about__container {
@@ -1271,10 +1401,6 @@ img {
 
   .contact__info li {
     justify-content: flex-start;
-  }
-
-  .contact__form {
-    padding: 8px 8px 8px 24px;
   }
 
   .contact__button {

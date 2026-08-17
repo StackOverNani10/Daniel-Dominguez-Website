@@ -91,11 +91,13 @@
       <!--==========================  HOME  =========================-->
       <section class="home section" id="home">
         <div class="home__container container grid">
-          <img
-            src="source/snowme.jpg"
-            alt="daniel domínguez picture"
-            class="home__img"
-          />
+          <div class="home__img-wrapper">
+            <img
+              src="source/daniel-portrait-2026.jpg"
+              alt="Daniel Domínguez"
+              class="home__img"
+            />
+          </div>
 
           <div class="home__data">
             <span class="home__badge">
@@ -159,7 +161,11 @@
             </p>
           </div>
 
-          <img src="source/meUpdt.png" alt="about image" class="about__img" />
+          <img
+            src="source/daniel-about-2026.jpg"
+            alt="Daniel Domínguez working at his desk"
+            class="about__img"
+          />
         </div>
       </section>
 
@@ -962,14 +968,48 @@
       <section class="contact section" id="contact">
         <div class="contact__container container">
           <div class="contact__content grid">
-            <iframe
-              class="contact__img__map"
-              title="My map"
-              name="My map"
-              src="https://www.google.com/maps/d/u/0/embed?mid=1lmdW5Dwa6pgZ4zu8JL5fCOoSnyGmm9k&ehbc=2E312F&noprof=1"
-              width="640"
-              height="480"
-            ></iframe>
+            <div class="contact__map" role="img" aria-label="Ubicación en Santo Domingo, República Dominicana">
+              <svg
+                class="contact__map-network"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <defs>
+                  <pattern
+                    id="mapGrid"
+                    width="7"
+                    height="7"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <circle class="contact__map-gridDot" cx="1" cy="1" r="0.5" />
+                  </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#mapGrid)" />
+                <g class="contact__map-links">
+                  <line x1="50" y1="50" x2="21" y2="27" />
+                  <line x1="50" y1="50" x2="81" y2="30" />
+                  <line x1="50" y1="50" x2="30" y2="79" />
+                  <line x1="50" y1="50" x2="76" y2="74" />
+                </g>
+                <g class="contact__map-nodes">
+                  <circle cx="21" cy="27" r="1.4" />
+                  <circle cx="81" cy="30" r="1.4" />
+                  <circle cx="30" cy="79" r="1.4" />
+                  <circle cx="76" cy="74" r="1.4" />
+                </g>
+              </svg>
+
+              <span class="contact__map-pin">
+                <span class="contact__map-pulse"></span>
+                <span class="contact__map-dot"></span>
+              </span>
+
+              <div class="contact__map-label">
+                <strong>Santo Domingo</strong>
+                <span>18.4861° N, 69.9312° W · GMT-4</span>
+              </div>
+            </div>
             <div class="contact__data">
               <h2 class="section__title contact__title">Keep in touch</h2>
 
