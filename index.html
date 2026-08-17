@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="keywords"
-      content="web design, web development, website, software, daniel dominguez, freelance, engineer, freelancing, software developer"
+      content="daniel dominguez, software engineer, mobile developer, .net developer, react developer, react native, flutter, backend developer, santo domingo, dominican republic"
     />
-    <meta name="description" content="Daniel Dominguez - personal Website" />
+    <meta
+      name="description"
+      content="Daniel Domínguez — Software Engineer building production services with .NET 8 / ASP.NET Core and cross-platform apps with React, React Native and Flutter. Creator of SOT and QuivApp."
+    />
     <meta name="author" content="Daniel Dominguez" />
 
     <!--==========================  FAVICON  ==========================-->
@@ -29,7 +32,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>Daniel Dominguez Website</title>
+    <title>Daniel Dominguez — Software Engineer</title>
   </head>
 
   <body>
@@ -53,6 +56,9 @@
             </li>
             <li class="nav__item">
               <a href="#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#experience" class="nav__link">Experience</a>
             </li>
             <li class="nav__item">
               <a href="#skills" class="nav__link">Skills</a>
@@ -92,27 +98,41 @@
           />
 
           <div class="home__data">
+            <span class="home__badge">
+              <i class="ri-map-pin-2-line"></i> Santo Domingo, D.R. · GMT-4
+            </span>
+
             <h1 class="home__title">
               Hi! My name is <br />
               <strong>Daniel Domínguez</strong> <br />
-              a Software Developer
+              Junior Mobile &amp; Front End Developer
             </h1>
 
             <p class="home__description">
               <span class="section__subtitle special">&#60;p&#62;</span>
-              Software Engineering Student | Mobile App Developer | Back-end
-              Developer
+              .NET · React · React Native / Flutter — designing and shipping
+              production APIs and cross-platform apps end to end.
               <span class="section__subtitle special">&#60;/p&#62;</span>
             </p>
 
-            <a
-              href="source/Daniel Dominguez Resume v2 - May2024 (ES).pdf"
-              class="button"
-              download
-            >
-              Download CV
-              <i class="fa-solid fa-download"></i>
-            </a>
+            <div class="home__buttons">
+              <a
+                href="source/Daniel Dominguez Resume - Aug2026.pdf"
+                class="button"
+                download
+              >
+                Download CV
+                <i class="fa-solid fa-download"></i>
+              </a>
+
+              <a
+                href="mailto:danidominguez101@gmail.com"
+                class="button button--ghost"
+              >
+                Contact Me
+                <i class="fa-solid fa-paper-plane"></i>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -124,16 +144,155 @@
             <span class="section__subtitle">About Me</span>
 
             <p class="about__description">
-              I am a person full of curiosity, willing to take all the
-              challenges that are presented to me and to learn new things every
-              day to help me be a better person and professional. I study
-              Software Engineer at the Instituto Tecnológico de Santo Domingo
-              (INTEC) and my short-term goal is to start my own software
-              company.
+              I'm a Software Engineer graduated from Instituto Tecnológico de
+              Santo Domingo (INTEC), with hands-on experience across backend,
+              frontend and mobile development. I currently build production
+              services with .NET 8 and Entity Framework Core at Seguros
+              Reservas, consumed by React and React Native (Expo)
+              applications, and I founded
+              <strong>SOT — Service On Time</strong>, a full-stack service
+              marketplace I architected end-to-end. I move comfortably across
+              the full stack, translate business requirements into working,
+              tested code with minimal supervision, and use AI-assisted tools
+              (GitHub Copilot, Claude) in a human-in-the-loop workflow to ship
+              faster while keeping code quality high.
             </p>
           </div>
 
           <img src="source/meUpdt.png" alt="about image" class="about__img" />
+        </div>
+      </section>
+
+      <!--========================  EXPERIENCE  ======================-->
+      <section class="experience section" id="experience">
+        <h2 class="section__title">Experience</h2>
+        <span class="section__subtitle skills__subtitle"
+          >Where I've worked &amp; what I've built</span
+        >
+
+        <div class="experience__container container">
+          <div class="experience__timeline">
+            <div class="experience__item">
+              <div class="experience__marker">
+                <i class="ri-briefcase-4-line"></i>
+              </div>
+              <div class="experience__content">
+                <div class="experience__header">
+                  <h3 class="experience__role">
+                    Software Engineer – New Projects
+                  </h3>
+                  <span class="experience__date">Mar 2024 – Present</span>
+                </div>
+                <span class="experience__company">Seguros Reservas</span>
+
+                <ul class="experience__list">
+                  <li>
+                    Design and develop backend services with .NET 8 and
+                    Entity Framework Core, consumed by web and mobile
+                    platforms.
+                  </li>
+                  <li>
+                    Maintain and enhance an Electronic Invoicing system
+                    integrated with DGII, ensuring regulatory compliance and
+                    reliability.
+                  </li>
+                  <li>
+                    Led development of a Payment Link Generator system,
+                    improving operational efficiency for insurance
+                    intermediaries.
+                  </li>
+                  <li>
+                    Write and maintain unit tests (xUnit) and implement
+                    CI/CD pipelines to automate deployment on Azure.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="experience__item">
+              <div class="experience__marker">
+                <i class="ri-flag-2-line"></i>
+              </div>
+              <div class="experience__content">
+                <div class="experience__header">
+                  <h3 class="experience__role">Founder &amp; Lead Developer</h3>
+                  <span class="experience__date">2024 – Present</span>
+                </div>
+                <span class="experience__company">SOT – Service On Time</span>
+
+                <ul class="experience__list">
+                  <li>
+                    Architect and build a full-stack service ecosystem
+                    end-to-end — client app, provider app, admin panel and
+                    backend APIs — used for national-level service
+                    distribution.
+                  </li>
+                  <li>
+                    Own product and technical decisions across backend,
+                    frontend and mobile, translating business needs directly
+                    into shipped features.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience__grid">
+            <div class="experience__panel">
+              <h3 class="experience__panel-title">
+                <i class="ri-graduation-cap-line"></i> Education
+              </h3>
+
+              <div class="experience__edu-item">
+                <div class="experience__edu-head">
+                  <span class="experience__edu-title"
+                    >Software Engineering — INTEC</span
+                  >
+                  <span class="experience__date">Jan 2020 – Oct 2024</span>
+                </div>
+                <p>
+                  Capstone: Vaccination Records Management System — a
+                  multi-role platform (patients, clinics, administrators)
+                  with dashboards, role-based access and automated
+                  reminders, replacing manual paper-based processes.
+                </p>
+              </div>
+
+              <div class="experience__edu-item">
+                <div class="experience__edu-head">
+                  <span class="experience__edu-title"
+                    >Complementary Studies in Mathematics &amp; Computing —
+                    University of Łódź, Poland</span
+                  >
+                  <span class="experience__date">Feb 2023 – Jul 2023</span>
+                </div>
+                <p>
+                  Coursework in Interface Design, Code Error Correction,
+                  Windows GUI Programming and Introduction to Java.
+                </p>
+              </div>
+            </div>
+
+            <div class="experience__panel">
+              <h3 class="experience__panel-title">
+                <i class="ri-award-line"></i> Certifications
+              </h3>
+
+              <ul class="experience__certs">
+                <li>
+                  Scrum Foundation Professional Certificate (SFPC) —
+                  CertiProf
+                </li>
+                <li>
+                  Accredited Software Testing Fundamentals Certification
+                  (ASTFC) — AICS®
+                </li>
+                <li>C# Certificate — SoloLearn</li>
+                <li>Python Core Certificate — SoloLearn</li>
+                <li>Data Curator Certification — Carlos Slim Foundation</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -212,7 +371,9 @@
           </div>
 
           <div class="skills__content">
-            <h2 class="section__title skills__title card__title">Skills</h2>
+            <h2 class="section__title skills__title card__title">
+              Backend &amp; Languages
+            </h2>
 
             <div class="skills__box">
               <div class="skills__group">
@@ -220,8 +381,8 @@
                   <i class="ri-checkbox-circle-line"></i>
 
                   <div>
-                    <h3 class="skills__name">React</h3>
-                    <span class="skills__level">Intermediate</span>
+                    <h3 class="skills__name">C#</h3>
+                    <span class="skills__level">Advanced</span>
                   </div>
                 </div>
 
@@ -229,8 +390,8 @@
                   <i class="ri-checkbox-circle-line"></i>
 
                   <div>
-                    <h3 class="skills__name">HTML</h3>
-                    <span class="skills__level">Intermediate</span>
+                    <h3 class="skills__name">.NET 8 / ASP.NET Core</h3>
+                    <span class="skills__level">Advanced</span>
                   </div>
                 </div>
 
@@ -238,8 +399,8 @@
                   <i class="ri-checkbox-circle-line"></i>
 
                   <div>
-                    <h3 class="skills__name">CSS</h3>
-                    <span class="skills__level">Intermediate</span>
+                    <h3 class="skills__name">Entity Framework Core</h3>
+                    <span class="skills__level">Advanced</span>
                   </div>
                 </div>
 
@@ -247,7 +408,7 @@
                   <i class="ri-checkbox-circle-line"></i>
 
                   <div>
-                    <h3 class="skills__name">JavaScript</h3>
+                    <h3 class="skills__name">xUnit / Moq</h3>
                     <span class="skills__level">Intermediate</span>
                   </div>
                 </div>
@@ -258,7 +419,25 @@
                   <i class="ri-checkbox-circle-line"></i>
 
                   <div>
-                    <h3 class="skills__name">Node Js</h3>
+                    <h3 class="skills__name">TypeScript / JavaScript</h3>
+                    <span class="skills__level">Advanced</span>
+                  </div>
+                </div>
+
+                <div class="skills__data">
+                  <i class="ri-checkbox-circle-line"></i>
+
+                  <div>
+                    <h3 class="skills__name">Node.js</h3>
+                    <span class="skills__level">Intermediate</span>
+                  </div>
+                </div>
+
+                <div class="skills__data">
+                  <i class="ri-checkbox-circle-line"></i>
+
+                  <div>
+                    <h3 class="skills__name">SQL Server / PostgreSQL</h3>
                     <span class="skills__level">Intermediate</span>
                   </div>
                 </div>
@@ -271,12 +450,22 @@
                     <span class="skills__level">Intermediate</span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
 
+          <div class="skills__content">
+            <h2 class="section__title skills__title card__title">
+              Frontend, Mobile &amp; Tools
+            </h2>
+
+            <div class="skills__box">
+              <div class="skills__group">
                 <div class="skills__data">
                   <i class="ri-checkbox-circle-line"></i>
 
                   <div>
-                    <h3 class="skills__name">Flutter</h3>
+                    <h3 class="skills__name">React / Vue.js</h3>
                     <span class="skills__level">Intermediate</span>
                   </div>
                 </div>
@@ -285,7 +474,63 @@
                   <i class="ri-checkbox-circle-line"></i>
 
                   <div>
-                    <h3 class="skills__name">Figma</h3>
+                    <h3 class="skills__name">React Native / Expo</h3>
+                    <span class="skills__level">Intermediate</span>
+                  </div>
+                </div>
+
+                <div class="skills__data">
+                  <i class="ri-checkbox-circle-line"></i>
+
+                  <div>
+                    <h3 class="skills__name">Flutter</h3>
+                    <span class="skills__level">Advanced</span>
+                  </div>
+                </div>
+
+                <div class="skills__data">
+                  <i class="ri-checkbox-circle-line"></i>
+
+                  <div>
+                    <h3 class="skills__name">HTML5 / CSS3</h3>
+                    <span class="skills__level">Advanced</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="skills__group">
+                <div class="skills__data">
+                  <i class="ri-checkbox-circle-line"></i>
+
+                  <div>
+                    <h3 class="skills__name">Firebase</h3>
+                    <span class="skills__level">Intermediate</span>
+                  </div>
+                </div>
+
+                <div class="skills__data">
+                  <i class="ri-checkbox-circle-line"></i>
+
+                  <div>
+                    <h3 class="skills__name">Azure / CI-CD</h3>
+                    <span class="skills__level">Intermediate</span>
+                  </div>
+                </div>
+
+                <div class="skills__data">
+                  <i class="ri-checkbox-circle-line"></i>
+
+                  <div>
+                    <h3 class="skills__name">Git</h3>
+                    <span class="skills__level">Advanced</span>
+                  </div>
+                </div>
+
+                <div class="skills__data">
+                  <i class="ri-checkbox-circle-line"></i>
+
+                  <div>
+                    <h3 class="skills__name">Figma / AI-assisted Dev</h3>
                     <span class="skills__level">Intermediate</span>
                   </div>
                 </div>
@@ -297,7 +542,155 @@
 
       <!--========================  PORTFOLIO  ======================-->
       <section class="portfolio section" id="portfolio">
-        <h2 class="section__title">My Portfolio</h2>
+        <h2 class="section__title">Featured Projects</h2>
+        <span class="section__subtitle skills__subtitle"
+          >The two I'm most proud of</span
+        >
+
+        <div class="container">
+          <div class="featured__grid">
+            <!--=================  SOT - SERVICE ON TIME  =================-->
+            <article class="featured__card">
+              <div class="featured__media">
+                <img
+                  src="source/sot-logo-wordmark.png"
+                  alt="SOT - Service On Time logo"
+                  class="featured__logo"
+                />
+              </div>
+
+              <div class="featured__body">
+                <span class="featured__eyebrow">Founder &amp; Lead Developer</span>
+                <h3 class="featured__title">SOT — Service On Time</h3>
+                <p class="featured__description">
+                  National-level service marketplace connecting clients with
+                  verified providers in real time. Architected and built
+                  end-to-end: client app, provider app and an internal admin
+                  panel, backed by a NestJS API — including a full payments
+                  &amp; commission-settlement system and a reports/moderation
+                  system.
+                </p>
+
+                <div class="featured__apps">
+                  <div class="featured__app">
+                    <img
+                      src="source/sot-client-icon.png"
+                      alt="SOT Service app icon"
+                    />
+                    <div>
+                      <h4>SOT Service</h4>
+                      <p>
+                        Flutter · request &amp; track services, live map,
+                        in-app chat, ratings, cash &amp; card payments
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="featured__app">
+                    <img
+                      src="source/sot-provider-icon.png"
+                      alt="SOT Provider app icon"
+                    />
+                    <div>
+                      <h4>SOT Provider</h4>
+                      <p>
+                        Flutter · claim requests, service zone map,
+                        commission &amp; settlement dashboard
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="featured__app">
+                    <div class="featured__app-icon">
+                      <i class="ri-dashboard-3-line"></i>
+                    </div>
+                    <div>
+                      <h4>Admin Panel</h4>
+                      <p>
+                        Next.js · users, disputes, reported reviews,
+                        cash-settlement management
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="featured__tags">
+                  <span>NestJS</span>
+                  <span>Flutter</span>
+                  <span>Next.js</span>
+                  <span>PostgreSQL</span>
+                  <span>Google Maps</span>
+                  <span>Firebase Cloud Messaging</span>
+                </div>
+
+                <div class="featured__links">
+                  <a href="https://sot.com.do" target="_blank" class="button">
+                    Visit sot.com.do
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!--========================  QUIVAPP  ========================-->
+            <article class="featured__card">
+              <div class="featured__media featured__media--quiv">
+                <img
+                  src="source/quivapp-logo.png"
+                  alt="QuivApp logo"
+                  class="featured__logo"
+                />
+              </div>
+
+              <div class="featured__body">
+                <span class="featured__eyebrow">Mobile Developer</span>
+                <h3 class="featured__title">
+                  QuivApp — Golf Cart Rental Platform
+                </h3>
+                <p class="featured__description">
+                  Cross-platform mobile application for renting golf carts,
+                  designed and developed from scratch for iOS and Android.
+                  Integrates secure in-app payment gateways and DocuSign for
+                  digital contract signing, consuming external APIs over a
+                  secure backend.
+                </p>
+
+                <div class="featured__highlights">
+                  <div class="featured__highlight">
+                    <i class="ri-smartphone-line"></i>
+                    <span>Built from scratch for iOS &amp; Android with Flutter</span>
+                  </div>
+                  <div class="featured__highlight">
+                    <i class="ri-shield-check-line"></i>
+                    <span>Secure in-app payment gateway integration</span>
+                  </div>
+                  <div class="featured__highlight">
+                    <i class="ri-quill-pen-line"></i>
+                    <span>Digital contract signing powered by DocuSign</span>
+                  </div>
+                  <div class="featured__highlight">
+                    <i class="ri-plug-line"></i>
+                    <span>Consumes external APIs over a secure backend</span>
+                  </div>
+                </div>
+
+                <div class="featured__tags">
+                  <span>Flutter</span>
+                  <span>iOS</span>
+                  <span>Android</span>
+                  <span>In-app Payments</span>
+                  <span>DocuSign</span>
+                  <span>REST APIs</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <h2 class="section__title other-projects__title">Other Projects</h2>
+        <span class="section__subtitle skills__subtitle"
+          >More things I've built along the way</span
+        >
 
         <div class="portfolio__container container grid">
           <article class="portfolio__card">
@@ -452,7 +845,7 @@
 
           <article class="portfolio__card">
             <div class="progress_band progress_band--completed">
-              <p>Complete</p>
+              <p>Completed</p>
             </div>
             <img
               src="source/paint.png"
@@ -491,7 +884,7 @@
 
           <article class="portfolio__card">
             <div class="progress_band progress_band--completed">
-              <p>Complete</p>
+              <p>Completed</p>
             </div>
             <img
               src="source/Api-ecommerce-img.png"
@@ -529,7 +922,7 @@
 
           <article class="portfolio__card">
             <div class="progress_band progress_band--completed">
-              <p>Complete</p>
+              <p>Completed</p>
             </div>
             <img
               src="source/ASCII website Img.png"
@@ -584,6 +977,21 @@
                 >Send me a message...</span
               >
 
+              <ul class="contact__info">
+                <li>
+                  <a href="mailto:danidominguez101@gmail.com"
+                    ><i class="fa-solid fa-envelope"></i>
+                    danidominguez101@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-location-dot"></i> Santo Domingo,
+                    D.R. (GMT-4)</span
+                  >
+                </li>
+              </ul>
+
               <form class="contact__form" name="contact" netlify>
                 <input
                   class="contact__input"
@@ -629,11 +1037,17 @@
 
           <div class="footer__social">
             <a
-              href="https://www.instagram.com/daniel_dominguez10/"
+              href="mailto:danidominguez101@gmail.com"
+              class="footer__social-link"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a
+              href="https://github.com/StackOverNani10"
               target="_blank"
               class="footer__social-link"
             >
-              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-github"></i>
             </a>
             <a
               href="https://www.linkedin.com/in/daniel-domínguez-pimentel-818306198/"
@@ -641,6 +1055,13 @@
               class="footer__social-link"
             >
               <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/daniel_dominguez10/"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-instagram"></i>
             </a>
             <a
               href="https://twitter.com/Danidancer10"
