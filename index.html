@@ -527,8 +527,9 @@
           >More things I've built along the way</span
         >
 
-        <div class="portfolio__container container grid">
-          <article class="portfolio__card">
+        <div class="carousel container" role="region" aria-label="Other projects carousel">
+          <div class="carousel__track" id="carousel-track" tabindex="0">
+          <article class="portfolio__card carousel__slide">
             <div class="progress_band progress_band--completed">
               <p>Completed</p>
             </div>
@@ -565,7 +566,7 @@
             </div>
           </article>
 
-          <article class="portfolio__card">
+          <article class="portfolio__card carousel__slide">
             <div class="progress_band progress_band--inprogress">
               <p>In Progress</p>
             </div>
@@ -604,7 +605,7 @@
             </div>
           </article>
 
-          <article class="portfolio__card">
+          <article class="portfolio__card carousel__slide">
             <div class="progress_band progress_band--inprogress">
               <p>In Progress</p>
             </div>
@@ -643,7 +644,7 @@
             </div>
           </article>
 
-          <article class="portfolio__card">
+          <article class="portfolio__card carousel__slide">
             <div class="progress_band progress_band--inprogress">
               <p>In Progress</p>
             </div>
@@ -678,7 +679,7 @@
             </div>
           </article>
 
-          <article class="portfolio__card">
+          <article class="portfolio__card carousel__slide">
             <div class="progress_band progress_band--completed">
               <p>Completed</p>
             </div>
@@ -717,7 +718,7 @@
             </div>
           </article>
 
-          <article class="portfolio__card">
+          <article class="portfolio__card carousel__slide">
             <div class="progress_band progress_band--completed">
               <p>Completed</p>
             </div>
@@ -755,7 +756,7 @@
             </div>
           </article>
 
-          <article class="portfolio__card">
+          <article class="portfolio__card carousel__slide">
             <div class="progress_band progress_band--completed">
               <p>Completed</p>
             </div>
@@ -790,6 +791,29 @@
               </div>
             </div>
           </article>
+          </div>
+
+          <div class="carousel__controls">
+            <button
+              class="carousel__arrow carousel__arrow--prev"
+              id="carousel-prev"
+              type="button"
+              aria-label="Previous project"
+            >
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+
+            <div class="carousel__dots" id="carousel-dots"></div>
+
+            <button
+              class="carousel__arrow carousel__arrow--next"
+              id="carousel-next"
+              type="button"
+              aria-label="Next project"
+            >
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+          </div>
         </div>
       </section>
 

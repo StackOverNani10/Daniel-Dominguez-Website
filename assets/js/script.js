@@ -95,9 +95,84 @@ const sr = ScrollReveal({
     // reset: true, //Animations repeat
 })
 
-sr.reveal(`.home__img, .portfolio__container,
+sr.reveal(`.home__img, .carousel,
             .footer__content, footer__information`)
 sr.reveal(`.home__data`, { origin: 'bottom' })
 sr.reveal(`.about__data, .skills__content`, { origin: 'left' })
 sr.reveal(`.about__img`, { origin: 'right' })
-sr.reveal(`.portfolio__card`, { interval: 100 })
+
+/*========= OTHER PROJECTS CAROUSEL =========*/
+const carouselTrack = document.getElementById('carousel-track')
+
+if (carouselTrack) {
+    const slides = Array.from(carouselTrack.querySelectorAll('.carousel__slide'))
+    const prevBtn = document.getElementById('carousel-prev')
+    const nextBtn = document.getElementById('carousel-next')
+    const dotsContainer = document.getElementById('carousel-dots')
+
+    slides.forEach((slide, index) => {
+        const dot = document.createElement('button')
+        dot.classList.add('carousel__dot')
+        dot.setAttribute('type', 'button')
+        dot.setAttribute('aria-label', `Go to project ${index + 1}`)
+        dot.addEventListener('click', () => {
+            slide.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' })
+        })
+        dotsContainer.appendChild(dot)
+    })
+
+    const dots = Array.from(dotsContainer.querySelectorAll('.carousel__dot'))
+
+    const updateCarouselState = () => {
+        const maxScrollLeft = carouselTrack.scrollWidth - carouselTrack.clientWidth
+        let closestIndex
+
+        if (carouselTrack.scrollLeft >= maxScrollLeft - 4) {
+            closestIndex = slides.length - 1
+        } else if (carouselTrack.scrollLeft <= 4) {
+            closestIndex = 0
+        } else {
+            const trackLeft = carouselTrack.getBoundingClientRect().left
+            let closestDistance = Infinity
+            closestIndex = 0
+
+            slides.forEach((slide, index) => {
+                const distance = Math.abs(slide.getBoundingClientRect().left - trackLeft)
+                if (distance < closestDistance) {
+                    closestDistance = distance
+                    closestIndex = index
+                }
+            })
+        }
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('carousel__dot--active', index === closestIndex)
+        })
+
+        prevBtn.disabled = carouselTrack.scrollLeft <= 4
+        nextBtn.disabled = carouselTrack.scrollLeft >= maxScrollLeft - 4
+    }
+
+    const scrollByDirection = (direction) => {
+        const slideWidth = slides[0].getBoundingClientRect().width
+        const gap = parseFloat(getComputedStyle(carouselTrack).columnGap) || 0
+        carouselTrack.scrollBy({ left: direction * (slideWidth + gap), behavior: 'smooth' })
+    }
+
+    prevBtn.addEventListener('click', () => scrollByDirection(-1))
+    nextBtn.addEventListener('click', () => scrollByDirection(1))
+
+    let scrollTicking = false
+    carouselTrack.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+            window.requestAnimationFrame(() => {
+                updateCarouselState()
+                scrollTicking = false
+            })
+            scrollTicking = true
+        }
+    })
+
+    window.addEventListener('resize', updateCarouselState)
+    updateCarouselState()
+}

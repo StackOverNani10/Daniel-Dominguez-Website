@@ -667,11 +667,86 @@ img {
 }
 
 /*=================== PORTFOLIO ===================*/
-.portfolio__container {
+.carousel {
+  position: relative;
   padding-top: 4rem;
-  grid-template-columns: 250px;
+}
+
+.carousel__track {
+  display: flex;
+  column-gap: 1.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1.5rem .25rem 2rem;
+  scroll-padding-left: .25rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  outline-offset: 8px;
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__slide {
+  flex: 0 0 250px;
+  scroll-snap-align: start;
+}
+
+.carousel__controls {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  row-gap: 5.5rem;
+  column-gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.carousel__arrow {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--card-color);
+  color: var(--white-text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color .3s, transform .2s, opacity .3s;
+}
+
+.carousel__arrow:hover {
+  background-color: var(--secundary-color);
+  transform: translateY(-2px);
+}
+
+.carousel__arrow:disabled {
+  opacity: .35;
+  cursor: default;
+  transform: none;
+}
+
+.carousel__dots {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+.carousel__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: hsl(222, 20%, 85%);
+  cursor: pointer;
+  transition: background-color .3s, transform .3s;
+}
+
+.carousel__dot--active {
+  background-color: var(--secundary-color);
+  transform: scale(1.35);
 }
 
 .portfolio__card {
@@ -1288,10 +1363,6 @@ textarea.contact__input {
     margin-left: auto;
   }
 
-  .portfolio__container {
-    grid-template-columns: repeat(2, 250px);
-  }
-
   .footer__content {
     grid-template-columns: repeat(4, max-content);
   }
@@ -1355,14 +1426,12 @@ textarea.contact__input {
     justify-content: initial;
   }
 
-  .portfolio__container {
-    grid-template-columns: repeat(3, 262px);
-    column-gap: 3.5rem;
-    padding-block: 4rem 4rem;
-  }
-
   .about__img {
     width: 450px;
+  }
+
+  .carousel__slide {
+    flex-basis: 270px;
   }
 
   .portfolio__card {
