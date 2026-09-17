@@ -14,6 +14,21 @@
     />
     <meta name="author" content="Daniel Dominguez" />
 
+    <!--=====================  THEME (no flash)  =======================-->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+
     <!--==========================  FAVICON  ==========================-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
@@ -78,6 +93,21 @@
         </div>
 
         <div class="nav__buttons">
+          <!-- Theme switch -->
+          <button
+            class="theme-switch"
+            id="theme-switch"
+            type="button"
+            role="switch"
+            aria-checked="false"
+            aria-label="Switch to dark theme"
+          >
+            <span class="theme-switch__thumb">
+              <i class="ri-sun-line theme-switch__icon theme-switch__icon--sun"></i>
+              <i class="ri-moon-line theme-switch__icon theme-switch__icon--moon"></i>
+            </span>
+          </button>
+
           <!-- Toggle button -->
           <div class="nav__toggle" id="nav-toggle">
             <i class="ri-apps-2-line"></i>
@@ -516,6 +546,58 @@
                   <span>In-app Payments</span>
                   <span>DocuSign</span>
                   <span>REST APIs</span>
+                </div>
+              </div>
+            </article>
+
+            <!--========================  PLANEA  =========================-->
+            <article class="featured__card featured__card--wide">
+              <div class="featured__media featured__media--planea">
+                <img
+                  src="source/planea-logo.png"
+                  alt="Planea logo"
+                  class="featured__logo"
+                />
+              </div>
+
+              <div class="featured__body">
+                <span class="featured__eyebrow">Independent Developer · In Development</span>
+                <h3 class="featured__title">Planea — Finanzas en Pareja</h3>
+                <p class="featured__description">
+                  Personal project: a mobile app that helps couples in the
+                  Dominican Republic plan, budget and save together — shared
+                  and personal expenses, monthly budgets, savings goals and
+                  debt payoff — without losing individual autonomy. Currently
+                  in active development, from product design through a
+                  Flutter app backed by Supabase.
+                </p>
+
+                <div class="featured__highlights">
+                  <div class="featured__highlight">
+                    <i class="ri-team-line"></i>
+                    <span>Shared &amp; personal expense tracking with configurable visibility rules for couples</span>
+                  </div>
+                  <div class="featured__highlight">
+                    <i class="ri-upload-2-line"></i>
+                    <span>Bank statement import from Excel, CSV and PDF with assisted categorization</span>
+                  </div>
+                  <div class="featured__highlight">
+                    <i class="ri-cloud-line"></i>
+                    <span>Supabase backend — PostgreSQL, Auth and Edge Functions with row-level security</span>
+                  </div>
+                  <div class="featured__highlight">
+                    <i class="ri-notification-3-line"></i>
+                    <span>Push notifications via Firebase Cloud Messaging, monitored with Sentry</span>
+                  </div>
+                </div>
+
+                <div class="featured__tags">
+                  <span>Flutter</span>
+                  <span>Riverpod</span>
+                  <span>Supabase</span>
+                  <span>PostgreSQL</span>
+                  <span>Firebase Cloud Messaging</span>
+                  <span>Sentry</span>
                 </div>
               </div>
             </article>

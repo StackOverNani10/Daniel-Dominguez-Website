@@ -29,6 +29,32 @@ const linkAction = () => {
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
+/*================ THEME SWITCH =================*/
+const themeSwitch = document.getElementById('theme-switch')
+const rootEl = document.documentElement
+
+const syncThemeSwitch = (theme) => {
+    if (!themeSwitch) return
+    themeSwitch.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false')
+    themeSwitch.setAttribute(
+        'aria-label',
+        theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+    )
+}
+
+syncThemeSwitch(rootEl.getAttribute('data-theme') || 'light')
+
+if (themeSwitch) {
+    themeSwitch.addEventListener('click', () => {
+        const nextTheme = rootEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+        rootEl.setAttribute('data-theme', nextTheme)
+        try {
+            localStorage.setItem('theme', nextTheme)
+        } catch (e) {}
+        syncThemeSwitch(nextTheme)
+    })
+}
+
 /*=========== CHANGE BACKGROUND HEADER ==========*/
 const scrollHeader = () => {
     const header = document.getElementById('header')

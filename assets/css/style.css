@@ -17,6 +17,17 @@
   --shadow-color: hsl(222, 47%, 14%, .35);
   --white-text-color: hsl(0, 0%, 100%);
 
+  /* Surfaces that flip between light/dark theme */
+  --surface-color: hsl(0, 0%, 100%);
+  --surface-border-color: rgba(0, 0, 0, .08);
+  --surface-divider-color: hsl(222, 20%, 92%);
+  --surface-hover-border: hsla(222, 47%, 14%, .15);
+  --pill-soft-bg: hsl(222, 20%, 95%);
+  --pill-soft-border: hsl(222, 20%, 90%);
+  --pill-soft-bg-hover: hsl(222, 20%, 90%);
+  --dot-inactive-color: hsl(222, 20%, 85%);
+  --switch-track-bg: hsla(230, 75%, 62%, .16);
+
   /* Particle Bg Colors */
   --particle-color: hsl(220, 25%, 97%);
   --lineParticle-color: hsl(230, 75%, 62%);
@@ -55,6 +66,25 @@
   }
 }
 
+/*==================== DARK THEME =================*/
+html[data-theme='dark'] {
+  --main-color: hsl(222, 42%, 9%);
+  --title-color: hsl(220, 25%, 95%);
+  --text-color: hsl(220, 15%, 72%);
+  --text-color-light: hsl(220, 12%, 60%);
+  --body-color: hsla(0, 0%, 0%, .6);
+
+  --surface-color: hsl(222, 38%, 17%);
+  --surface-border-color: hsla(0, 0%, 100%, .08);
+  --surface-divider-color: hsla(0, 0%, 100%, .1);
+  --surface-hover-border: hsla(0, 0%, 100%, .18);
+  --pill-soft-bg: hsla(0, 0%, 100%, .07);
+  --pill-soft-border: hsla(0, 0%, 100%, .14);
+  --pill-soft-bg-hover: hsla(0, 0%, 100%, .14);
+  --dot-inactive-color: hsla(0, 0%, 100%, .2);
+  --switch-track-bg: hsla(230, 75%, 62%, .3);
+}
+
 /*==================== BASE ======================*/
 * {
   margin: 0;
@@ -75,7 +105,8 @@ body {
   color: var(--text-color);
   overflow-x: hidden;
   z-index: 99;
-  cursor: default
+  cursor: default;
+  transition: background-color .4s, color .4s;
 }
 
 h1,
@@ -193,6 +224,61 @@ img {
   cursor: pointer;
 }
 
+/*=================== THEME SWITCH ==================*/
+.theme-switch {
+  position: relative;
+  width: 3.1rem;
+  height: 1.7rem;
+  padding: 0;
+  border: none;
+  border-radius: 4rem;
+  background-color: var(--switch-track-bg);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color .3s;
+}
+
+.theme-switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background-color: var(--white-text-color);
+  box-shadow: 0 2px 6px hsla(222, 47%, 14%, .35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .3s;
+}
+
+html[data-theme='dark'] .theme-switch__thumb {
+  transform: translateX(1.4rem);
+}
+
+.theme-switch__icon {
+  position: absolute;
+  font-size: .8rem;
+  color: var(--secundary-color);
+  transition: opacity .2s, transform .2s;
+}
+
+.theme-switch__icon--moon {
+  opacity: 0;
+  transform: scale(.4);
+}
+
+html[data-theme='dark'] .theme-switch__icon--sun {
+  opacity: 0;
+  transform: scale(.4);
+}
+
+html[data-theme='dark'] .theme-switch__icon--moon {
+  opacity: 1;
+  transform: scale(1);
+}
+
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
@@ -203,6 +289,16 @@ img {
     box-shadow: 0 8px 20px hsla(19, 64%, 24%, .1);
     padding-block: 3.5rem;
     transition: top .4s;
+  }
+
+  /* The dropdown itself is always a dark overlay, in both themes,
+     so its links must stay light regardless of --title-color */
+  .nav__menu .nav__link {
+    color: var(--white-text-color);
+  }
+
+  .nav__menu .nav__close {
+    color: var(--white-text-color);
   }
 }
 
@@ -315,9 +411,9 @@ img {
   display: inline-flex;
   align-items: center;
   column-gap: .35rem;
-  background-color: hsla(222, 47%, 14%, .1);
-  color: var(--card-color);
-  border: 1px solid hsla(222, 47%, 14%, .3);
+  background-color: hsla(230, 75%, 62%, .1);
+  color: var(--secundary-color);
+  border: 1px solid hsla(230, 75%, 62%, .3);
   padding: .35rem .9rem;
   border-radius: 4rem;
   font-size: var(--smaller-font-size);
@@ -397,18 +493,20 @@ img {
 .skills__panel {
   display: grid;
   row-gap: 2rem;
-  background-color: hsl(0, 0%, 100%);
-  border: 1px solid rgba(0, 0, 0, .08);
+  background-color: var(--surface-color);
+  border: 1px solid var(--surface-border-color);
   border-radius: 1.5rem;
   padding: 2.5rem;
   box-shadow: 0 1px 2px hsla(222, 47%, 8%, .04);
+  transition: background-color .4s, border-color .4s;
 }
 
 .skills__group {
   display: grid;
   row-gap: 1.1rem;
   padding-top: 2rem;
-  border-top: 1px solid hsl(222, 20%, 92%);
+  border-top: 1px solid var(--surface-divider-color);
+  transition: border-color .4s;
 }
 
 .skills__group:first-child {
@@ -458,13 +556,13 @@ img {
 }
 
 .skills__pills--soft span {
-  background-color: hsl(222, 20%, 95%);
+  background-color: var(--pill-soft-bg);
   color: var(--text-color);
-  border-color: hsl(222, 20%, 90%);
+  border-color: var(--pill-soft-border);
 }
 
 .skills__pills--soft span:hover {
-  background-color: hsl(222, 20%, 90%);
+  background-color: var(--pill-soft-bg-hover);
 }
 
 @media screen and (max-width: 576px) {
@@ -589,10 +687,11 @@ img {
 }
 
 .experience__panel {
-  background-color: hsl(0, 0%, 100%);
-  border: 1px solid rgba(0, 0, 0, .08);
+  background-color: var(--surface-color);
+  border: 1px solid var(--surface-border-color);
   border-radius: 1.25rem;
   padding: 1.75rem;
+  transition: background-color .4s, border-color .4s;
 }
 
 .experience__panel-title {
@@ -739,7 +838,7 @@ img {
   padding: 0;
   border: none;
   border-radius: 50%;
-  background-color: hsl(222, 20%, 85%);
+  background-color: var(--dot-inactive-color);
   cursor: pointer;
   transition: background-color .3s, transform .3s;
 }
@@ -883,6 +982,10 @@ img {
   background: linear-gradient(135deg, hsl(150, 55%, 22%), hsl(84, 55%, 38%));
 }
 
+.featured__media--planea {
+  background: linear-gradient(135deg, hsl(158, 55%, 26%), hsl(160, 65%, 11%));
+}
+
 .featured__body {
   padding: 2rem;
   display: grid;
@@ -1023,6 +1126,20 @@ img {
 
   .featured__media {
     height: 240px;
+  }
+
+  .featured__card--wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+  }
+
+  .featured__card--wide .featured__media {
+    height: 100%;
+  }
+
+  .featured__card--wide .featured__body {
+    max-width: 640px;
   }
 }
 
@@ -1190,11 +1307,11 @@ img {
   padding: .95rem 1.25rem;
   border: 1.5px solid transparent;
   border-radius: 1rem;
-  background-color: var(--white-text-color);
+  background-color: var(--surface-color);
   color: var(--title-color);
   font-size: var(--small-font-size);
   box-shadow: 0 1px 2px hsla(222, 47%, 8%, .06);
-  transition: border-color .25s, box-shadow .25s;
+  transition: border-color .25s, box-shadow .25s, background-color .4s;
 }
 
 .contact__input::placeholder {
@@ -1202,7 +1319,7 @@ img {
 }
 
 .contact__input:hover {
-  border-color: hsla(222, 47%, 14%, .15);
+  border-color: var(--surface-hover-border);
 }
 
 .contact__input:focus {
