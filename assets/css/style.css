@@ -448,7 +448,7 @@ html[data-theme='dark'] .theme-switch__icon--moon {
 
 .button:hover {
   background-color: var(--card-color);
-  color: var(--main-color);
+  color: var(--white-text-color);
   border-color: var(--white-text-color);
 }
 
@@ -946,9 +946,19 @@ html[data-theme='dark'] .theme-switch__icon--moon {
   margin-top: 5rem;
 }
 
-.featured__grid {
-  display: grid;
-  row-gap: 2.5rem;
+.carousel--featured {
+  padding-top: 1rem;
+}
+
+.carousel--featured .carousel__slide {
+  flex-basis: 88%;
+  scroll-snap-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel--featured .carousel__slide {
+    flex-basis: 620px;
+  }
 }
 
 .featured__card {
@@ -1119,27 +1129,8 @@ html[data-theme='dark'] .theme-switch__icon--moon {
 }
 
 @media screen and (min-width: 1024px) {
-  .featured__grid {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2.5rem;
-  }
-
   .featured__media {
     height: 240px;
-  }
-
-  .featured__card--wide {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 320px 1fr;
-  }
-
-  .featured__card--wide .featured__media {
-    height: 100%;
-  }
-
-  .featured__card--wide .featured__body {
-    max-width: 640px;
   }
 }
 
@@ -1169,36 +1160,62 @@ html[data-theme='dark'] .theme-switch__icon--moon {
   height: 300px;
   border-radius: 1.5rem;
   overflow: hidden;
-  background: radial-gradient(circle at 28% 24%, hsl(222, 45%, 22%), var(--card-color) 65%);
+  background: linear-gradient(180deg, hsl(230, 45%, 14%) 0%, hsl(226, 42%, 17%) 55%, hsl(262, 38%, 21%) 100%);
   box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, .08);
 }
 
-.contact__map-network {
+.contact__map-scene {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 }
 
-.contact__map-gridDot {
-  fill: hsla(0, 0%, 100%, .16);
+.contact__map-moon {
+  fill: hsl(45, 90%, 88%);
+  filter: drop-shadow(0 0 14px hsla(45, 90%, 75%, .55));
 }
 
-.contact__map-links line {
-  stroke: var(--secundary-color);
-  stroke-width: .35;
-  opacity: .55;
+.contact__map-stars circle {
+  fill: hsla(0, 0%, 100%, .8);
+  animation: star-twinkle 3.2s ease-in-out infinite;
 }
 
-.contact__map-nodes circle {
-  fill: var(--secundary-color);
-  opacity: .85;
+.contact__map-stars circle:nth-child(2n) {
+  animation-delay: .8s;
+}
+
+.contact__map-stars circle:nth-child(3n) {
+  animation-delay: 1.6s;
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: .3; }
+  50% { opacity: 1; }
+}
+
+.contact__map-skyline {
+  fill: hsl(222, 55%, 9%);
+}
+
+.contact__map-palm {
+  fill: hsl(222, 60%, 7%);
+}
+
+.contact__map-waves path {
+  fill: none;
+  stroke: hsla(230, 75%, 72%, .35);
+  stroke-width: 1.2;
+}
+
+.contact__map-waves path:nth-child(2) {
+  stroke-opacity: .55;
 }
 
 .contact__map-pin {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 46%;
+  left: 42%;
   width: 12px;
   height: 12px;
   transform: translate(-50%, -50%);
@@ -1236,6 +1253,11 @@ html[data-theme='dark'] .theme-switch__icon--moon {
   .contact__map-pulse {
     animation: none;
     display: none;
+  }
+
+  .contact__map-stars circle {
+    animation: none;
+    opacity: .8;
   }
 }
 
@@ -1337,6 +1359,16 @@ textarea.contact__input {
   cursor: pointer;
   justify-self: start;
   border: none;
+}
+
+/* These buttons sit on top of a --card-color surface (contact box,
+   featured project card), so the default hover (bg: --card-color)
+   would blend into it. Invert to a light pill instead. */
+.contact__button:hover,
+.featured__links .button:hover {
+  background-color: var(--white-text-color);
+  color: var(--card-color);
+  border-color: var(--white-text-color);
 }
 
 .contact__container,

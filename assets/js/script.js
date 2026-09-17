@@ -127,20 +127,19 @@ sr.reveal(`.home__data`, { origin: 'bottom' })
 sr.reveal(`.about__data, .skills__content`, { origin: 'left' })
 sr.reveal(`.about__img`, { origin: 'right' })
 
-/*========= OTHER PROJECTS CAROUSEL =========*/
-const carouselTrack = document.getElementById('carousel-track')
-
-if (carouselTrack) {
-    const slides = Array.from(carouselTrack.querySelectorAll('.carousel__slide'))
-    const prevBtn = document.getElementById('carousel-prev')
-    const nextBtn = document.getElementById('carousel-next')
-    const dotsContainer = document.getElementById('carousel-dots')
+/*============== CAROUSELS (generic) ============*/
+const initCarousel = (carousel) => {
+    const track = carousel.querySelector('.carousel__track')
+    const slides = Array.from(track.querySelectorAll('.carousel__slide'))
+    const prevBtn = carousel.querySelector('.carousel__arrow--prev')
+    const nextBtn = carousel.querySelector('.carousel__arrow--next')
+    const dotsContainer = carousel.querySelector('.carousel__dots')
 
     slides.forEach((slide, index) => {
         const dot = document.createElement('button')
         dot.classList.add('carousel__dot')
         dot.setAttribute('type', 'button')
-        dot.setAttribute('aria-label', `Go to project ${index + 1}`)
+        dot.setAttribute('aria-label', `Go to item ${index + 1}`)
         dot.addEventListener('click', () => {
             slide.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' })
         })
@@ -150,15 +149,15 @@ if (carouselTrack) {
     const dots = Array.from(dotsContainer.querySelectorAll('.carousel__dot'))
 
     const updateCarouselState = () => {
-        const maxScrollLeft = carouselTrack.scrollWidth - carouselTrack.clientWidth
+        const maxScrollLeft = track.scrollWidth - track.clientWidth
         let closestIndex
 
-        if (carouselTrack.scrollLeft >= maxScrollLeft - 4) {
+        if (track.scrollLeft >= maxScrollLeft - 4) {
             closestIndex = slides.length - 1
-        } else if (carouselTrack.scrollLeft <= 4) {
+        } else if (track.scrollLeft <= 4) {
             closestIndex = 0
         } else {
-            const trackLeft = carouselTrack.getBoundingClientRect().left
+            const trackLeft = track.getBoundingClientRect().left
             let closestDistance = Infinity
             closestIndex = 0
 
@@ -175,21 +174,21 @@ if (carouselTrack) {
             dot.classList.toggle('carousel__dot--active', index === closestIndex)
         })
 
-        prevBtn.disabled = carouselTrack.scrollLeft <= 4
-        nextBtn.disabled = carouselTrack.scrollLeft >= maxScrollLeft - 4
+        prevBtn.disabled = track.scrollLeft <= 4
+        nextBtn.disabled = track.scrollLeft >= maxScrollLeft - 4
     }
 
     const scrollByDirection = (direction) => {
         const slideWidth = slides[0].getBoundingClientRect().width
-        const gap = parseFloat(getComputedStyle(carouselTrack).columnGap) || 0
-        carouselTrack.scrollBy({ left: direction * (slideWidth + gap), behavior: 'smooth' })
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 0
+        track.scrollBy({ left: direction * (slideWidth + gap), behavior: 'smooth' })
     }
 
     prevBtn.addEventListener('click', () => scrollByDirection(-1))
     nextBtn.addEventListener('click', () => scrollByDirection(1))
 
     let scrollTicking = false
-    carouselTrack.addEventListener('scroll', () => {
+    track.addEventListener('scroll', () => {
         if (!scrollTicking) {
             window.requestAnimationFrame(() => {
                 updateCarouselState()
@@ -202,3 +201,5 @@ if (carouselTrack) {
     window.addEventListener('resize', updateCarouselState)
     updateCarouselState()
 }
+
+document.querySelectorAll('.carousel').forEach(initCarousel)

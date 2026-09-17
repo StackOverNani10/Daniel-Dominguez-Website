@@ -409,13 +409,13 @@
       <section class="portfolio section" id="portfolio">
         <h2 class="section__title">Featured Projects</h2>
         <span class="section__subtitle skills__subtitle"
-          >The two I'm most proud of</span
+          >The ones I'm most proud of</span
         >
 
-        <div class="container">
-          <div class="featured__grid">
+        <div class="carousel carousel--featured container" role="region" aria-label="Featured projects carousel">
+          <div class="carousel__track" tabindex="0">
             <!--=================  SOT - SERVICE ON TIME  =================-->
-            <article class="featured__card">
+            <article class="featured__card carousel__slide">
               <div class="featured__media">
                 <img
                   src="source/sot-logo-wordmark.png"
@@ -498,7 +498,7 @@
             </article>
 
             <!--========================  QUIVAPP  ========================-->
-            <article class="featured__card">
+            <article class="featured__card carousel__slide">
               <div class="featured__media featured__media--quiv">
                 <img
                   src="source/quivapp-logo.png"
@@ -551,7 +551,7 @@
             </article>
 
             <!--========================  PLANEA  =========================-->
-            <article class="featured__card featured__card--wide">
+            <article class="featured__card carousel__slide">
               <div class="featured__media featured__media--planea">
                 <img
                   src="source/planea-logo.png"
@@ -602,6 +602,26 @@
               </div>
             </article>
           </div>
+
+          <div class="carousel__controls">
+            <button
+              class="carousel__arrow carousel__arrow--prev"
+              type="button"
+              aria-label="Previous featured project"
+            >
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+
+            <div class="carousel__dots"></div>
+
+            <button
+              class="carousel__arrow carousel__arrow--next"
+              type="button"
+              aria-label="Next featured project"
+            >
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+          </div>
         </div>
 
         <h2 class="section__title other-projects__title">Other Projects</h2>
@@ -610,7 +630,7 @@
         >
 
         <div class="carousel container" role="region" aria-label="Other projects carousel">
-          <div class="carousel__track" id="carousel-track" tabindex="0">
+          <div class="carousel__track" tabindex="0">
           <article class="portfolio__card carousel__slide">
             <div class="progress_band progress_band--completed">
               <p>Completed</p>
@@ -878,18 +898,16 @@
           <div class="carousel__controls">
             <button
               class="carousel__arrow carousel__arrow--prev"
-              id="carousel-prev"
               type="button"
               aria-label="Previous project"
             >
               <i class="ri-arrow-left-s-line"></i>
             </button>
 
-            <div class="carousel__dots" id="carousel-dots"></div>
+            <div class="carousel__dots"></div>
 
             <button
               class="carousel__arrow carousel__arrow--next"
-              id="carousel-next"
               type="button"
               aria-label="Next project"
             >
@@ -903,35 +921,44 @@
       <section class="contact section" id="contact">
         <div class="contact__container container">
           <div class="contact__content grid">
-            <div class="contact__map" role="img" aria-label="Ubicación en Santo Domingo, República Dominicana">
+            <div class="contact__map" role="img" aria-label="Ilustración del malecón de Santo Domingo, República Dominicana, al atardecer">
               <svg
-                class="contact__map-network"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
+                class="contact__map-scene"
+                viewBox="0 0 400 260"
+                preserveAspectRatio="xMidYMax slice"
                 aria-hidden="true"
               >
-                <defs>
-                  <pattern
-                    id="mapGrid"
-                    width="7"
-                    height="7"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <circle class="contact__map-gridDot" cx="1" cy="1" r="0.5" />
-                  </pattern>
-                </defs>
-                <rect width="100" height="100" fill="url(#mapGrid)" />
-                <g class="contact__map-links">
-                  <line x1="50" y1="50" x2="21" y2="27" />
-                  <line x1="50" y1="50" x2="81" y2="30" />
-                  <line x1="50" y1="50" x2="30" y2="79" />
-                  <line x1="50" y1="50" x2="76" y2="74" />
+                <circle class="contact__map-moon" cx="322" cy="54" r="20" />
+
+                <g class="contact__map-stars">
+                  <circle cx="36" cy="38" r="1.4" />
+                  <circle cx="86" cy="24" r="1" />
+                  <circle cx="138" cy="52" r="1.2" />
+                  <circle cx="196" cy="20" r="1" />
+                  <circle cx="230" cy="46" r="1.3" />
+                  <circle cx="270" cy="18" r="1" />
+                  <circle cx="365" cy="30" r="1.2" />
+                  <circle cx="390" cy="70" r="1" />
                 </g>
-                <g class="contact__map-nodes">
-                  <circle cx="21" cy="27" r="1.4" />
-                  <circle cx="81" cy="30" r="1.4" />
-                  <circle cx="30" cy="79" r="1.4" />
-                  <circle cx="76" cy="74" r="1.4" />
+
+                <path
+                  class="contact__map-skyline"
+                  d="M0,260 L0,190 L18,190 L18,160 L40,160 L40,195 L64,195 L64,150 L88,150 L88,175 L112,175 L112,130 L140,130 L140,110 L152,110 L152,85 L164,85 L164,110 L176,110 L176,155 L204,155 L204,140 L228,140 L228,180 L252,180 L252,150 L276,150 L276,190 L300,190 L300,165 L324,165 L324,198 L348,198 L348,178 L400,178 L400,260 Z"
+                />
+
+                <path
+                  class="contact__map-palm"
+                  d="M51,260 C47,228 51,198 55,176 C57,198 59,228 63,260 Z
+                     M55,176 C42,166 28,166 16,156 C24,172 38,180 55,178 Z
+                     M55,177 C46,158 44,144 36,130 C44,146 52,160 57,176 Z
+                     M55,176 C57,152 53,136 57,118 C63,136 63,154 58,176 Z
+                     M56,176 C68,158 76,146 88,134 C78,150 70,162 59,177 Z
+                     M56,178 C72,170 84,172 98,164 C86,176 72,182 58,180 Z"
+                />
+
+                <g class="contact__map-waves">
+                  <path d="M0,232 Q20,226 40,232 T80,232 T120,232 T160,232 T200,232 T240,232 T280,232 T320,232 T360,232 T400,232" />
+                  <path d="M0,244 Q20,238 40,244 T80,244 T120,244 T160,244 T200,244 T240,244 T280,244 T320,244 T360,244 T400,244" />
                 </g>
               </svg>
 
